@@ -2,7 +2,7 @@ import React from 'react';
 import Main from '/Users/raviraghavan/phs-project/src/Main/Main.js';
 import Shelter from '/Users/raviraghavan/phs-project/src/Shelter/Shelter.js'
 import Donate from '/Users/raviraghavan/phs-project/src/Donate/Donate.js'
-import TwitterUpload from '/Users/raviraghavan/phs-project/src/Twitter/TwitterUpload.js'
+import TwitterUpload from '/Users/raviraghavan/phs-project/src/TwitterUpload.js'
 import Login from '/Users/raviraghavan/phs-project/src/Login/Login.js'
 import '/Users/raviraghavan/phs-project/src/App.css'
 import Profile from '/Users/raviraghavan/phs-project/src/Profile/Profile.js'
