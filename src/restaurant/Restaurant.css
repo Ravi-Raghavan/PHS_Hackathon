@@ -1,0 +1,63 @@
+.Restaurant{    
+    display: flex;
+    flex-flow: column wrap;
+    margin: 5px;
+
+}
+.Main-Image{
+    height:50px;
+    width:50px;
+}
+.Main-Image img{
+    height: 50%;
+    width: 50%;
+}
+
+.Name{
+    text-align:center;
+    margin-top: 5px;
+}
+.Name a{
+    font-family: 'Patrick Hand';
+    font-weight: bold;
+}
+.Column1{
+    align-self:left;
+}
+.Column2{
+    align-self:right;
+}
+.DirectionsButton a{
+    text-align: center;
+    width: 50%;
+    padding: 4px;
+    border: 0px solid blue;
+    border-radius: 4px;
+    align-self: center;
+    font-size: 0.8rem;
+    background-color:green;
+    color: #fff;
+    position: relative;
+    top: 0px;
+    font-weight: bold;
+}
+
+.AddButton{
+    text-align: center;
+}
+.AddButton a{
+    cursor:pointer;
+    width: 25%;
+    padding: 4px;
+    border: 0px solid rgba(14, 64, 158, 0.425);
+    border-radius: 4px;
+    align-self: center;
+    font-size: 0.8rem;
+    background-color: green;
+    color:white;
+    position: relative;
+    top: 20px;
+    font-weight: bold;
+
+
+}

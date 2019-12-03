@@ -3,9 +3,40 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "react": "^16.10.2",
+    "@angular/animations": "^8.2.13",
+    "@angular/cdk": "^8.2.3",
+    "@nebular/eva-icons": "^4.5.0",
+    "@nebular/theme": "^4.5.0",
+    "@react-native-community/google-signin": "^3.0.3",
+    "actions-on-google": "^2.12.0",
+    "cli": "^1.0.1",
+    "cors": "^2.8.5",
+    "dialogflow": "^0.10.3",
+    "dialogflow-fulfillment": "^0.6.1",
+    "firebase": "^7.3.0",
+    "firebase-admin": "^8.7.0",
+    "firebase-functions": "^3.1.0",
+    "firebaseui": "^4.2.0",
+    "native": "^0.3.3",
+    "native-base": "^2.13.8",
+    "node-uber": "^2.0.0",
+    "paypal-rest-sdk": "^1.8.1",
+    "react": "^16.12.0",
     "react-dom": "^16.10.2",
-    "react-scripts": "3.2.0"
+    "react-firebaseui": "^4.0.0",
+    "react-google-maps": "^9.4.5",
+    "react-native-fbsdk": "^1.0.4",
+    "react-native-firebase": "^5.5.6",
+    "react-native-google-signin": "^2.1.0",
+    "react-native-open-maps": "^0.3.4",
+    "react-native-twitter-signin": "^1.1.1",
+    "react-router-dom": "^5.1.2",
+    "react-scripts": "3.2.0",
+    "react-simple-chatbot": "^0.6.1",
+    "react-twitter-embed": "^3.0.3",
+    "styled-components": "^4.4.1",
+    "twit": "^2.2.11",
+    "twitter": "^1.7.1"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -27,5 +58,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "api-ai-javascript": "^2.0.0-beta.21"
   }
 }
