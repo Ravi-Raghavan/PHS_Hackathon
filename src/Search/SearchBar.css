@@ -7,7 +7,7 @@
     background-image: url('https://www.byblos.com/wp-content/uploads/Restaurant-Cucina-Byblos_Ambiance_Hotel-Byblos-Saint-Tropez-14-1600x1000.jpg');
     background-size: 100% 100%;
     margin-top: -16px;
-
+    transform: scale(1.02,1.02);
 
 }
 .text1{

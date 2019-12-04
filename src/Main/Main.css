@@ -92,6 +92,7 @@
 }
 .house {
   width: 100%;
+  transform: scale(1.025,1.025);
 }
 .twitt {
   margin-left: 500px

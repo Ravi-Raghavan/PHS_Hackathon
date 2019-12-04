@@ -2,7 +2,7 @@ import React from 'react';
 import Main from '/Users/raviraghavan/phs-project/src/Main/Main.js';
 import Shelter from '/Users/raviraghavan/phs-project/src/Shelter/Shelter.js'
 import Donate from '/Users/raviraghavan/phs-project/src/Donate/Donate.js'
-import TwitterUpload from '/Users/raviraghavan/phs-project/src/TwitterUpload.js'
+import TwitterUpload from '/Users/raviraghavan/phs-project/src/Twitter/TwitterUpload.js'
 import Login from '/Users/raviraghavan/phs-project/src/Login/Login.js'
 import '/Users/raviraghavan/phs-project/src/App/App.css'
 import Profile from '/Users/raviraghavan/phs-project/src/Profile/Profile.js'
@@ -47,6 +47,7 @@ class App extends React.Component{
         //this.changeOption = this.changeOption.bind(this)
         this.resetError = this.resetError.bind(this)
         this.usernameChange = this.usernameChange.bind(this)
+        this.forgotPassword = this.forgotPassword.bind(this)
     }
     isActive(option){
         if(this.state.Option === option){
@@ -168,16 +169,16 @@ class App extends React.Component{
         var self = this
         var email = this.state.email
         var password = this.state.pass
-        window.prompt(email)
-        window.prompt(password)
+        //window.prompt(email)
+        //window.prompt(password)
         app.auth().signInWithEmailAndPassword(email, password).then(function(user){
-            window.prompt("Everything went fine. User has been logged in")
+            //window.prompt("Everything went fine. User has been logged in")
             
         }).catch(function(error){
             self.setState({
                 error: error.message
             })
-            window.prompt(error.message)
+            //window.prompt(error.message)
             //document.getElementById('strong').innerHTML = error.message
         })
         //window.prompt("This function has successfully been called")
@@ -187,7 +188,8 @@ class App extends React.Component{
         app.auth().signOut()
         this.setState({
             isRegistering:false,
-            isLoggingIn: false
+            isLoggingIn: false,
+            error: ""
         })
     }
     loginPress(event){
@@ -298,6 +300,14 @@ class App extends React.Component{
             )
         }
     }
+    forgotPassword(){
+            var email = window.prompt("What is your email")
+            app.auth().sendPasswordResetEmail(email).then(function(){
+                window.prompt("Success")
+            }).catch(function(error){
+                window.prompt(error.message)
+            })
+    }
     render(){
         return(
             <div class = "App">
@@ -341,7 +351,7 @@ class App extends React.Component{
                     ?
                     (
                     <div>
-                        <div marginTop = '10px'class = "navbar" style = {{height: '65px', textAlign: 'center', fontSize: '25px'}}>
+                        <div marginTop = '0px'class = "navbar" style = {{height: '65px', textAlign: 'center', fontSize: '25px'}}>
                                     <img height = '65px' src = 'https://cdn.dribbble.com/users/2694750/screenshots/5881349/sok-logo-dribble.png'></img>
                         </div> 
                         {this.displayErrors()}
@@ -354,7 +364,7 @@ class App extends React.Component{
                                     </label>
                                     <input onChange = {this.emailChange}required className="form__input" id="email" type="text" name="email" aria-describedby="errorEmail"  pattern="[^]+@[^]+[.][a-z]{2,63}$" autocomplete="email"/>
                                     {/*<p role="alert" className="form__error" id="errorEmail">Please use a valid email address.</p>*/}
-                                    {this.displayEmailValidation()}
+                                    {/*this.displayEmailValidation()*/}
                                     </div>
 
                                 <div className="form__element" style = {{marginLeft: '30px'}}>
@@ -364,7 +374,7 @@ class App extends React.Component{
                                 </label>
                                 <input data-error="Please use a password with at least 8 characters." data-empty="Please fill out this field"onChange = {this.passChange} className="form__input" id="password" type="password" name="password" minLength="8" aria-describedby="passwordHint" autocomplete="current-password"/>
                                 <div  className = 'display'>
-                                <a onClick = {this.viewPassword}style = {{fontWeight: 'bold',backgroundColor: '#be2826', padding: '12px 15px', borderRadius: '2px', fontSize: '8.5px',color: 'white', border: '0px'}}class="unmask" type="button" id = 'masking' title="Mask/Unmask password to check content">Show Password</a>
+                                <a onClick = {this.viewPassword}style = {{fontWeight: 'bold',backgroundColor: '#be2826', padding: '14px 20px', borderRadius: '2px', fontSize: '8.5px',color: 'white', border: '0px'}}class="unmask" type="button" id = 'masking' title="Mask/Unmask password to check content">Show Password</a>
                                 </div>
                                 {/*<p className="form__hint" id="passwordHint">The password must be at least 8 characters long.</p>*/}
                                 {this.displayPasswordValidation()}
@@ -378,8 +388,6 @@ class App extends React.Component{
                                 {/*<p className="form__hint" id="passwordHint">The password must be at least 8 characters long.</p>*/}
                                 
                             </div>
-
-                            <a href="/forgotPassword">Forgot password?</a>
                             <div style = {{marginTop: '30px'}}className = "Sign" >
                                         <a style = {{fontWeight: 'bold',backgroundColor: '#be2826', padding: '12px 95px', borderRadius: '0px', fontSize: '12px',color: 'white', border: '0px'}} onClick = {this.onceCredentials}>Sign Up</a>
                             </div>
@@ -401,12 +409,12 @@ class App extends React.Component{
                                 {/*{this.displayErrors()}*/}
                                 <div className="form__element has-error" style = {{marginLeft: '30px'}}>
                                     <label className="form__label" for="email">
-                                            Email
+                                            Email/Username
                                             <span className="form__required">required</span>
                                     </label>
                                     <input onChange = {this.emailChange}required className="form__input" id="email" type="text" name="email" aria-describedby="errorEmail"  pattern="[^]+@[^]+[.][a-z]{2,63}$" autocomplete="email"/>
                                     {/*<p role="alert" className="form__error" id="errorEmail">Please use a valid email address.</p>*/}
-                                    {this.displayEmailValidation()}
+                                    {/*this.displayEmailValidation()*/}
                                     </div>
 
                                 <div className="form__element" style = {{marginLeft: '30px'}}>
@@ -416,22 +424,13 @@ class App extends React.Component{
                                 </label>
                                 <input data-error="Please use a password with at least 8 characters." data-empty="Please fill out this field"onChange = {this.passChange} className="form__input" id="password" type="password" name="password" minLength="8" aria-describedby="passwordHint" autocomplete="current-password"/>
                                 <div  className = 'display'>
-                                <a onClick = {this.viewPassword}style = {{fontWeight: 'bold',backgroundColor: '#be2826', padding: '12px 15px', borderRadius: '2px', fontSize: '8.5px',color: 'white', border: '0px'}}class="unmask" type="button" id = 'masking' title="Mask/Unmask password to check content">Show Password</a>
+                                <a onClick = {this.viewPassword}style = {{fontWeight: 'bold',backgroundColor: '#be2826', padding: '14px 20px',width: '250px', borderRadius: '2px', fontSize: '8.5px',color: 'white', border: '0px'}}class="unmask" type="button" id = 'masking' title="Mask/Unmask password to check content">Show Password</a>
                                 </div>
                                 {/*<p className="form__hint" id="passwordHint">The password must be at least 8 characters long.</p>*/}
                                 {this.displayPasswordValidation()}
                             </div>
-                            <div className="form__element" style = {{marginLeft: '30px'}}>
-                                <label className="form__label" for="password">
-                                        UserName
-                                        <span className="form__required">required</span>
-                                </label>
-                                <input data-error="Please use a UserName." data-empty="Please fill out this field"onChange = {this.usernameChange} className="form__input" id="name" type="text" name="username"  aria-describedby="passwordHint" autocomplete="current-password"/>
-                                {/*<p className="form__hint" id="passwordHint">The password must be at least 8 characters long.</p>*/}
-                                
-                            </div>
 
-                            <a href="/forgotPassword">Forgot password?</a>
+                            <a onClick = {this.forgotPassword} >Forgot password?</a>
                             <div style = {{marginTop: '30px'}}className = "Sign" >
                                         <a style = {{fontWeight: 'bold',backgroundColor: '#be2826', padding: '12px 95px', borderRadius: '0px', fontSize: '12px',color: 'white', border: '0px'}} onClick = {this.onceUser}>Log In</a>
                             </div>
@@ -466,7 +465,7 @@ class App extends React.Component{
                                 <text>Simple and Convenient</text>
                                 <text >Acquire Many Rewards</text>
                             </div>
-                            <div class = "Login" style = {{marginRight: '0px',marginLeft: '0px',marginBottom: '0px', marginTop: '-16px', height: '390px', background: 'linear-gradient(to right, blue,#6495ED, blue)'}}>
+                            <div class = "Login" style = {{marginRight: '-10px',marginLeft: '-10px', marginTop: '-16px', height: '390px', background: 'linear-gradient(to right, blue,#6495ED, blue)'}}>
                             <div style = {{marginTop: '0px'}}>
                             <div>
                             <div style = {{textAlign: 'center'}}>

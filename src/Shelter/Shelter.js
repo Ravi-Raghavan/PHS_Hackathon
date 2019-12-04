@@ -133,6 +133,12 @@ class Shelter extends React.Component{
       })
     })
   }
+  extraCode(){
+    /**{/*<table style = {{flexDirection: "column", display: 'inline-flex', border: '1px solid black', borderCollapse: 'collapse'}}>
+            <th style = {{flexDirection: "column", display: 'inline-flex', border: '1px solid black'}}>Company Name</th>
+            {this.displayDB()}
+        </table>*/
+  }
   render(){
     return(
       <div className = "Shelter"> 
@@ -146,10 +152,7 @@ class Shelter extends React.Component{
       <div style = {{textAlign: 'center', flexDirection: "column"}}class = "renderDatabase">
         {this.state.activated 
         ?(
-            <table style = {{flexDirection: "column", display: 'inline-flex', border: '1px solid black', borderCollapse: 'collapse'}}>
-            <th style = {{flexDirection: "column", display: 'inline-flex', border: '1px solid black'}}>Company Name</th>
-            {this.displayDB()}
-            </table>
+          <div></div>
         ):(
           <text style = {{textAlign: 'center', fontFamily: 'Patrick Hand', fontSize: '50px'}}>Search Form</text>
         )

@@ -13,6 +13,9 @@
     overflow: hidden;
     background-color: #333;
     font-family: Arial;
+    transform: translate(0, -10px) ;
+    width: 1500px;
+    margin-left: -10px;
   }
   
   /* Links inside the navbar */
@@ -115,7 +118,10 @@ lightblieuelightb red
   .Media{
     background-image: url('https://www.moneypeach.com/wp-content/uploads/2018/02/Make-Money-with-PayPal-FB.jpg');
     background-size: 100% 100%;
-    height: 800px;
+    height: 820px;
+    margin-top: -20px;
+    margin-left: -10px;
+    margin-right: -10px;
 
 }
 .PayPalIMG {
@@ -162,6 +168,8 @@ lightblieuelightb red
 }
 .Subtext{
     height: 80px;
+    margin-left: -10px;
+    margin-right: -10px;
 }
 .Subtext text{
     float: left;
@@ -169,7 +177,7 @@ lightblieuelightb red
     margin-left: 260px;
     font-family: 'Patrick Hand';
     font-size: 20px;
-
+  
 }
 
 .NavBar{   
@@ -356,10 +364,15 @@ lightblieuelightb red
 .unmask{
   height: 20px;
   width: 200px;
+  transform: scale(5.5, 1);
 }
 .yelp{
   transform: translate(100px,-400px);
 }
 .register{
   transform: translate(00px,-350px) scale(1.5,1.5);
+}
+.Login{
+  transform: translate(00px, 10px);
+  margin-bottom: 0px;
 }

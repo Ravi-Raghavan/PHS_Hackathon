@@ -2,7 +2,7 @@ import React from 'react'
 import Main from '/Users/raviraghavan/phs-project/src/Main/Main.js';
 import Shelter from '/Users/raviraghavan/phs-project/src/Shelter/Shelter.js'
 import Donate from '/Users/raviraghavan/phs-project/src/Donate/Donate.js'
-import TwitterUpload from '/Users/raviraghavan/phs-project/src/TwitterUpload.js'
+import TwitterUpload from '/Users/raviraghavan/phs-project/src/Twitter/TwitterUpload.js'
 import '/Users/raviraghavan/phs-project/src/Login/Login.css'
 import App from '/Users/raviraghavan/phs-project/src/App/App.js'
 import * as firebase from 'firebase'
