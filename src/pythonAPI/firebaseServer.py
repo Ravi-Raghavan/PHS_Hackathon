@@ -54,17 +54,40 @@ books = [
 def home():
     return "<h1>Test Point</h1><p>This site is a prototype API for PHS Project.</p>"
 
-@app.route('/api/v1/resources/restaurants/user', methods = ["GET"])
+@app.route('/api/v1/resources/restaurants/user', methods = ["GET", "POST"])
 def get_user_information():
-    if 'name' in request.args:
-        name = (request.args['name'])
-    else:
-        return "Please Provide the name of the user"
-    results = None
-    for eachDic in userDictionaries:
-        if eachDic['name'] == name:
-            results = eachDic['restaurants']
-    return jsonify(results) 
+    if(request.method == "GET"):
+        if 'name' in request.args:
+            name = (request.args['name'])
+        else:
+            return "Please Provide the name of the user"
+        results = None
+        doc_ref = db.collection(u'users').document(u'{}'.format(name)).get().to_dict()
+        results = doc_ref
+        return jsonify(results) 
+    elif(request.method == "POST"):
+        req_data = request.form
+        print("Test for Object", req_data == None)
+        '''if 'name' in request.args:
+            name = (request.args['name'])
+        else:
+            return "Please Provide the name of the user"
+        if 'restaurantID' in request.args:
+            id = request.args['restaurantID']
+        else:
+            return "Please Give restaurant ID"
+        if 'restaurantName' in request.args:
+            restaurantName = request.args['restaurantName']
+        else:
+            return "Please provide a restaurant Name"'''
+        restaurantObject = {'id': req_data['restaurantID'], 'name': req_data['restaurantName']}
+        doc_ref = db.collection(u'users').document(u'{}'.format(req_data['name']))
+        doc_ref.set({
+        u'name': req_data['name'],
+        u'restaurants': restaurantObject
+    })
+        updated_doc_ref = db.collection(u'users').document(u'{}'.format(req_data['name'])).get().to_dict()
+        return jsonify(updated_doc_ref)
 
 @app.route('/api/v1/resources/books', methods = ["GET"])
 def api_id():
@@ -78,6 +101,16 @@ def api_id():
             results.append(book)
     
     return jsonify(results)
+
+@app.route('/api/v1/resources/user/add', methods = ["POST"])
+def add_user():
+    name = ""
+    if 'name' in request.args:
+        name = request.args['name']
+    else: 
+        return "No name has been included"
+    return name
+    
 
 
 app.run()
