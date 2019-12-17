@@ -1,0 +1,21 @@
+{
+  "files": {
+    "main.css": "/Ravi-Raghavan/PHS_Hackathon.git/static/css/main.e71cb783.chunk.css",
+    "main.js": "/Ravi-Raghavan/PHS_Hackathon.git/static/js/main.b3622c5d.chunk.js",
+    "main.js.map": "/Ravi-Raghavan/PHS_Hackathon.git/static/js/main.b3622c5d.chunk.js.map",
+    "runtime-main.js": "/Ravi-Raghavan/PHS_Hackathon.git/static/js/runtime-main.dd1d4b98.js",
+    "runtime-main.js.map": "/Ravi-Raghavan/PHS_Hackathon.git/static/js/runtime-main.dd1d4b98.js.map",
+    "static/js/2.ef73fa56.chunk.js": "/Ravi-Raghavan/PHS_Hackathon.git/static/js/2.ef73fa56.chunk.js",
+    "static/js/2.ef73fa56.chunk.js.map": "/Ravi-Raghavan/PHS_Hackathon.git/static/js/2.ef73fa56.chunk.js.map",
+    "index.html": "/Ravi-Raghavan/PHS_Hackathon.git/index.html",
+    "precache-manifest.4ec467a940c4a990acd312f6453d6386.js": "/Ravi-Raghavan/PHS_Hackathon.git/precache-manifest.4ec467a940c4a990acd312f6453d6386.js",
+    "service-worker.js": "/Ravi-Raghavan/PHS_Hackathon.git/service-worker.js",
+    "static/css/main.e71cb783.chunk.css.map": "/Ravi-Raghavan/PHS_Hackathon.git/static/css/main.e71cb783.chunk.css.map"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.dd1d4b98.js",
+    "static/js/2.ef73fa56.chunk.js",
+    "static/css/main.e71cb783.chunk.css",
+    "static/js/main.b3622c5d.chunk.js"
+  ]
+}
