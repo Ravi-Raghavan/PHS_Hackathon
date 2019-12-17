@@ -1,0 +1,21 @@
+{
+  "files": {
+    "main.css": "/PHS_Hackathon/static/css/main.e71cb783.chunk.css",
+    "main.js": "/PHS_Hackathon/static/js/main.cfa0088d.chunk.js",
+    "main.js.map": "/PHS_Hackathon/static/js/main.cfa0088d.chunk.js.map",
+    "runtime-main.js": "/PHS_Hackathon/static/js/runtime-main.d88ace02.js",
+    "runtime-main.js.map": "/PHS_Hackathon/static/js/runtime-main.d88ace02.js.map",
+    "static/js/2.88c840d3.chunk.js": "/PHS_Hackathon/static/js/2.88c840d3.chunk.js",
+    "static/js/2.88c840d3.chunk.js.map": "/PHS_Hackathon/static/js/2.88c840d3.chunk.js.map",
+    "index.html": "/PHS_Hackathon/index.html",
+    "precache-manifest.8672d5dde20467e0be0011f71635806e.js": "/PHS_Hackathon/precache-manifest.8672d5dde20467e0be0011f71635806e.js",
+    "service-worker.js": "/PHS_Hackathon/service-worker.js",
+    "static/css/main.e71cb783.chunk.css.map": "/PHS_Hackathon/static/css/main.e71cb783.chunk.css.map"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.d88ace02.js",
+    "static/js/2.88c840d3.chunk.js",
+    "static/css/main.e71cb783.chunk.css",
+    "static/js/main.cfa0088d.chunk.js"
+  ]
+}
