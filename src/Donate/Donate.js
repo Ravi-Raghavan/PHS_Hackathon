@@ -8,7 +8,7 @@ class Donations extends React.Component {
   render() {
     return(
       <div > 
-        <div class = "Membership" >
+        <div className = "Membership" >
         </div>
         <div class = "donate-text">Use the Following Link to Send a Donation!
         <form   action = "/action_page.php">

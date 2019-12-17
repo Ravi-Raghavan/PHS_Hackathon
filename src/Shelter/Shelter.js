@@ -147,7 +147,7 @@ class Shelter extends React.Component{
       <SearchBar isActivated = {this.state.activated} user = {this.props.user} readInitialDB = {this.readInitialDB} onSearch = {this.search}/>
       </p>
       <div class = "RestaurantList"> 
-      <RestaurantList deleteFromFirebase = {this.delfromFireBase} readFromFirebase = {this.readFromFirebase} addToPersonalDB = {this.addToPersonalDB} listOfBusinesses = {this.state.businesses}/> 
+      <RestaurantList onRemove = {this.props.onRemove} onAdd = {this.props.onAdd} user = {this.props.user} deleteFromFirebase = {this.delfromFireBase} readFromFirebase = {this.readFromFirebase} addToPersonalDB = {this.addToPersonalDB} listOfBusinesses = {this.state.businesses}/> 
       </div>
       <div style = {{textAlign: 'center', flexDirection: "column"}}class = "renderDatabase">
         {this.state.activated 

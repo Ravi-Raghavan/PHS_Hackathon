@@ -10,7 +10,7 @@ class RestaurantList extends React.Component{
         return(
             <div style = {{textAlign: 'center'}}className = "Restaurants">{
                 this.props.listOfBusinesses.map(business => {
-                    return <Restaurant deleteFromFirebase = {this.props.deleteFromFirebase} style = {{display: 'inline-block'}} readFromFirebase = {this.props.readFromFirebase} addToPersonalDB = {this.props.addToPersonalDB} key = {business.id} business = {business} />;
+                    return <Restaurant onRemove = {this.props.onRemove} onAdd = {this.props.onAdd} user = {this.props.user} deleteFromFirebase = {this.props.deleteFromFirebase} style = {{display: 'inline-block'}} readFromFirebase = {this.props.readFromFirebase} addToPersonalDB = {this.props.addToPersonalDB} key = {business.id} business = {business} />;
                 })
                 
             }</div>

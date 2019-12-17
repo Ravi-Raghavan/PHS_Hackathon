@@ -9,6 +9,7 @@ import * as firebase from 'firebase'
 import StyledFirebaseAuth from 'react-firebaseui/StyledFirebaseAuth'
 import Profile from '/Users/raviraghavan/phs-project/src/Profile/Profile.js'
 import {db} from '/Users/raviraghavan/phs-project/src/Firebase/config.js'
+import Flask from '/Users/raviraghavan/phs-project/src/FlaskQuery.js'
 //var database = firebase.database()
 
 class Restaurant extends React.Component{
@@ -24,6 +25,7 @@ class Restaurant extends React.Component{
         this.combineFunc = this.combineFunc.bind(this)
         this.combineFunc2 = this.combineFunc2.bind(this)
         this.deleteFromFirebase = this.deleteFromFirebase.bind(this)
+        this.flaskQuery = this.flaskQuery.bind(this)
     }
     splitRestaurantName(){
         let res = JSON.stringify(this.props.business.name).split("")
@@ -82,12 +84,20 @@ class Restaurant extends React.Component{
            key: myRestaurant
         })*/
     }
+    flaskQuery(name){
+        var x = Math.floor(Math.random() * 10)
+        Flask.add_restaurant(this.props.user, x, name)
+        /*var jsonObj = Flask.retrieve_user(name)
+        window.prompt(jsonObj)*/
+    }
     addToPersonalDB(name){
         this.props.addToPersonalDB(name)
     }
     combineFunc(name){
         this.addToBase2(name)
+        //this.flaskQuery(name)
         this.readFromFirebase(name)
+        this.props.onAdd(name)
     }
     readFromFirebase(name){
         this.props.readFromFirebase(name)
@@ -98,7 +108,7 @@ class Restaurant extends React.Component{
     combineFunc2(name){
         this.deleteFromFirebase(name)
         this.removeFromBase(name)
-
+        this.props.onRemove(name)
     }
     removeFromBase(myRestaurant){
         var rlength = myRestaurant.length
@@ -129,7 +139,7 @@ class Restaurant extends React.Component{
                         <p>{this.props.business.state}</p>
                         <p>{this.props.business.zipCode}</p>
                         <div className = "DirectionsButton">               
-                            <a href = {`https://www.google.com/maps/dir/?api=1&origin=My+Location&destination=${this.props.business.name}+${this.props.business.city}+${this.props.business.state}&travelmode=driving`}>Get Directions</a>
+                            <a className = "Directions" style = {{borderBottom: '1px solid'}}href = {`https://www.google.com/maps/dir/?api=1&origin=My+Location&destination=${this.props.business.name}+${this.props.business.city}+${this.props.business.state}&travelmode=driving`}>Get Directions</a>
                         </div>
                     </div>
                 </div>

@@ -1,11 +1,14 @@
 
 .Membership{
-    align-items: center;
-    background-image: url('https://blog.vancity.com/wp-content/uploads/2016/12/GiveHands-iStock-Blog-1280x620-1280x620.jpg');
-    filter: blur(6px);
-    -webkit-filter: blur(6px);
-    height: 620px;
-    width: 1400px;
+    align-items: center;    
+    background-image: url(http://ppcdn.500px.org/75319705/1991f76c0c6a91ae1d23eb94ac5c7a9f7e79c480/2048.jpg) ;
+    filter: blur(2px);
+    -webkit-filter: blur(2px);
+
+    height: 1030px;
+    width: 1450px;
+    transform: scale(1.00,1.1) translate(0, 36px);
+    margin-left: -10px;
 
 }
 .donate-text{
